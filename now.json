@@ -1,0 +1,15 @@
+{
+    "name": "API_Fodmarket",
+    "version": 2,
+    "builds": [{ "src": "index.js", "use": "@now/node-server" }],
+    "routes": [{ "src": "/(.*)", "dest": "/index.js" }],
+    "env": {
+        "DB_USER": "@dbuser",
+        "DB_PASSWORD": "@dbpassword",
+        "DB_HOST": "@dbhost",
+        "DB_NAME": "@dbname",
+        "CLOUD_NAME": "@cloud_name",
+        "API_KEY": "@cloud_api_key",
+        "API_SECRET": "@cloud_api_secret"
+    }
+}

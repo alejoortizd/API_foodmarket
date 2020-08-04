@@ -11,6 +11,7 @@ const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
 const cloudinary = require('cloudinary');
 const { config } = require('./config');
+const cors = require("cors");
 const helmet = require('helmet');
 
 // Controllers
@@ -40,6 +41,7 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 // Middlewares
+app.use(cors());
 // app.use(helmet());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
