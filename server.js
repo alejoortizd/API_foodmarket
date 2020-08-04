@@ -8,7 +8,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const multer = require('multer');
-const uuid = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 const cloudinary = require('cloudinary');
 const { config } = require('./config');
 const helmet = require('helmet');
@@ -56,7 +56,7 @@ app.use(flash());
 const storage = multer.diskStorage({
     destination: path.join(__dirname, 'public/img/upload'),
     filename: (req, file, cb, filename) => {
-        cb(null, uuid() + path.extname(file.originalname))
+        cb(null, uuidv4() + path.extname(file.originalname))
     }
 })
 app.use(multer({ storage }).single('image'));
