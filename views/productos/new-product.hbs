@@ -1,0 +1,40 @@
+<div class="col-md-4 mx-auto">
+    <div class="card text-center">
+        <div class="class-header">
+            <h3>New Product</h3>
+        </div>
+        <div class="card-body">
+            <form action="/products/new-product" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="Name" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="float" name="price" class="form-control" placeholder="Price">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                    </div>
+                    <select class="custom-select" name="category">
+                        <option selected>Choose...</option>
+                        <option value="Carne">Carne</option>
+                        <option value="Lacteos">Lacteos</option>
+                        <option value="Enlatados">Enlatados</option>
+                        <option value="Bebidas">Bebidas</option>
+                        <option value="Vegetales">Vegetales</option>
+                        <option value="Snacks">Snacks</option>
+                    </select>
+                </div>
+                <div class="custom-file mb-3">
+                    <input type="file" class="custom-file-input" name="image">
+                    <label class="input-group-text custom-file-label" for="customFile">Choose Image</label>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

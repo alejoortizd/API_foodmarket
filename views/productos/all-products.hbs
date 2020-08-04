@@ -1,0 +1,23 @@
+<div class="row">
+    {{#each products}}
+    <div class="col-md-3">
+        <div class="card">
+            <img src="{{originpath}}" class="card-img-top" alt="..." width="100" height="400">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center"><strong>{{category}}</strong></h4>
+                <p><strong>Name</strong>: {{name}}</p>
+                <p><strong>Price</strong>: ${{price}}</p>
+                <div class="modal-footer">
+                    <form action="/products/delete/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger btn-block">Delete</button>
+                    </form>
+                    <a href="/products/edit/{{_id}}">
+                        <button type="button" class="btn btn-primary">Update</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
