@@ -22,6 +22,7 @@ const userRouter = require('./routes/usersRoutes');
 
 // Initialization
 const app = express();
+app.use(session({ secret: 'somevalue' }))
 require('./config/passport');
 
 // Settings

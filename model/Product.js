@@ -18,6 +18,10 @@ const ProductSchema = new mongoose.Schema({
     originpath: {
         type: String
     },
+    cantidad: {
+	type: Number,
+	default: 1
+    },
     user: {
         type: String,
         required: true
