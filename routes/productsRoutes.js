@@ -9,7 +9,7 @@ router.post('/products/new-product', isAuth.isAuthenticated, routesProducts.crea
 
 // get all products
 router.get('/products', isAuth.isAuthenticated, routesProducts.renderProducts)
-router.post('getProdusts', routesProducts.getproducts);
+router.post('/api/getProdusts', routesProducts.getproducts);
 
 // edit products
 router.get('/products/edit/:productId', isAuth.isAuthenticated, routesProducts.renderEditForm)
