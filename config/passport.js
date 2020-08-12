@@ -1,6 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('../model/User');
+const { ObjectID } = require('mongodb');
 
 passport.use(new LocalStrategy({
     usernameField: 'email',
@@ -26,11 +27,11 @@ passport.use(new LocalStrategy({
 }))
 
 passport.serializeUser((user, done) => {
-    done(null, user._id)
+    done(null, ObjectID(user._id))
 });
 
 passport.deserializeUser((_id, done) => {
-    User.findById(_id, (err, user) => {
+    User.findById(ObjectID(_id), (err, user) => {
         done(err, user);
     })
 });
