@@ -79,6 +79,13 @@ app.use('/', navRouter);
 app.use('/api/products', productsApiRouter);
 app.use('/', productRouter)
 app.use('/', userRouter);
+app.get('/api/successLogin', (req, res) => {
+    res.status(200).send({success: "ok"});
+});
+
+app.get('/api/failedLogin', (req, res) => {
+    res.status(401).send({error: "Unauthorizer"});
+});
 
 // Redirect
 // app.get('/', (req, res) => {
