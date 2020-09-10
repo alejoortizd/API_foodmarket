@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "clean-css-cli": "^4.3.0",
-    "handlebars": "^4.5.0",
+    "handlebars": "^4.5.3",
     "nodemon": "^2.0.4",
     "npm-check-updates": "^7.0.2"
   }
